@@ -1,0 +1,138 @@
+= The Style Guide Style Guide
+:idprefix:
+:idseparator: -
+:sectanchors:
+:sectlinks:
+:toc: preamble
+:toclevels: 1
+ifndef::backend-pdf[]
+:toc-title: pass:[<h2>Table of Contents</h2>]
+endif::[]
+
+This Meta style guide outlines the recommended practices for style guide contributors.
+
+== Content
+
+[quote]
+____
+Content is King
+
+-- Bill Gates
+____
+
+=== Start with Why [[start-with-why]]
+
+[quote]
+____
+People don't buy what you do,
+they buy why you do it.
+
+-- Simon Sinek
+____
+
+Start with an explanation why the guide is important.
+
+=== Only keep essential
+
+=== Meaningful descriptions
+
+=== good and bad examples
+
+=== options
+
+Provide options when there is more than one acceptable way.
+
+=== Context
+
+Provide necessary context, sources, links to discussions.
+
+=== Up to date
+
+Keep the guide up to date. Do not keep guidelines just for historical reasons.
+
+=== Static analysis tool references
+
+Provide a reference to `rubocop-hq/*`.
+
+
+=== Tell how to contribute
+
+=== Add a license
+
+== Layout
+
+=== Provide the table of contents [[provide-toc]]
+
+=== Group the guidelines
+
+Group the guidelines into logically related sections.
+
+=== Order guidelines by importance
+
+== Formatting
+
+=== Use proper English
+
+=== Use proper AsciiDoc
+
+https://asciidoctor.org/docs/asciidoc-recommended-practices
+
+=== Descriptive section titles
+
+  quote code with backslashes in section titles
+
+=== Explicit section anchors
+
+    good for renaming
+    primary/secondary
+
+=== One sentence per line [[ventilated-prose]] [[one-sentence-per-line]]
+
+https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-line
+    less churn
+    three examples
+
+=== Quote code in section titles
+
+[source,]
+----
+# bad
+=== No and or or [[no-and-or-or]]
+
+# good
+=== No `and` or `or` [[no-and-or-or]]
+----
+
+==== Except when it's unnecessary
+
+[source,]
+----
+=== Set vs array
+
+=== `Set` vs `Array`
+----
+
+== Misc
+
+=== Provide editor configuration file
+
+  include .gitattributes file with no-trailing whitespace, no-something
+
+=== Ignore produced export
+
+include .gitignore
+
+=== How to Contribute?
+
+It's easy, just follow the contribution guidelines below:
+
+* https://help.github.com/articles/fork-a-repo[Fork] the project on GitHub
+* Make your feature addition or bug fix in a feature branch
+* Include a http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html[good description] of your changes
+* Push your feature branch to GitHub
+* Send a https://help.github.com/articles/using-pull-requests[Pull Request]
+
+== License
+
+image:https://i.creativecommons.org/l/by/3.0/88x31.png[Creative Commons License]
+This work is licensed under a http://creativecommons.org/licenses/by/3.0/deed.en_US[Creative Commons Attribution 3.0 Unported License]
