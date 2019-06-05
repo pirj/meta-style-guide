@@ -10,6 +10,7 @@ ifndef::backend-pdf[]
 endif::[]
 
 This Meta style guide outlines the recommended practices for style guide contributors.
+When we say "style", we mean "consistency".
 
 == Content
 
@@ -32,13 +33,69 @@ ____
 
 Start with an explanation why the guide is important.
 
-=== Only keep essential
+[source,]
+----
+# bad
+This Ruby style guide contains best practices for programming Ruby.
 
-=== Meaningful descriptions
+# good
+This Ruby style guide recommends best practices so that real-world Ruby programmers can write code that can be maintained by other real-world Ruby programmers.
+----
 
-=== good and bad examples
+=== Essentials
 
-=== options
+Leave out obvious, rarely used, and arguable recommendations.
+
+[source,]
+----
+# bad
+Do not keep newlines in the beginning of the file.
+
+# good
+End each file with a single newline.
+----
+
+=== Descriptive Section Titles
+
+=== Meaningful Descriptions
+
+Provide concise, but comprehensive descriptions.
+
+[source,]
+----
+# bad - not enough context
+Prefer modules to classes with only class methods.
+
+# bad - excessively verbose
+Prefer modules to classes with only class methods.
+Classes are intended to be instantiated and inherited from. A
+A service class is usually a functional unit that has an entry point, and the implementation is not important for consumers.
+Dealing with the redundant necessity to instantiate a service class adds boilerplate to consumer code.
+
+# good
+Prefer modules to classes with only class methods.
+Classes should be used only when it makes sense to create instances out of them.
+----
+
+=== Good, Ok'ish and Bad Examples
+
+==== Example Description
+
+Provide example description if the example is not obvious.
+
+[source,]
+----
+# bad - too verbose
+...
+
+# ok'ish - short, but comprehensive
+...
+
+# good - enough context to understand the implications
+...
+----
+
+=== Options
 
 Provide options when there is more than one acceptable way.
 
@@ -46,28 +103,42 @@ Provide options when there is more than one acceptable way.
 
 Provide necessary context, sources, links to discussions.
 
-=== Up to date
+=== Up to Date
 
-Keep the guide up to date. Do not keep guidelines just for historical reasons.
+Keep the guide up to date.
+Do not keep obsolete guidelines just for historical reasons.
 
-=== Static analysis tool references
+=== Regarded Sources
 
-Provide a reference to `rubocop-hq/*`.
+Iconic books on the subject of the guide are the best source of guidelines.
 
+Established practices is another.
+Consult popular source code of mature projects, e.g. https://github.com/jeromedalbert/real-world-ruby-apps/[Real World Ruby apps] and https://github.com/eliotsykes/real-world-rails/[Real World Rails apps].
+Make sure to use recent stable versions.
 
-=== Tell how to contribute
+=== External Content
 
-=== Add a license
+Do not rely on external content.
+Keep important information in the guide itself.
+
+=== Keep it Tidy
+
+It's ok to have discussions in progress.
+However, if there's no consensus, and discussions lead nowhere, close the pull request/issue.
 
 == Layout
 
-=== Provide the table of contents [[provide-toc]]
+=== Provide the Table of Contents [[provide-toc]]
 
-=== Group the guidelines
+=== Group the Guidelines
 
 Group the guidelines into logically related sections.
 
-=== Order guidelines by importance
+=== Order Guidelines by Importance
+
+=== Brothership
+
+In doubt, consult and mimic the other guides.
 
 == Formatting
 
@@ -75,24 +146,38 @@ Group the guidelines into logically related sections.
 
 === Use proper AsciiDoc
 
-https://asciidoctor.org/docs/asciidoc-recommended-practices
+Refer to the latest https://asciidoctor.org/docs/asciidoc-recommended-practices[AsciiDoc recommended practices].
+Check HTML and PDF export output before accepting a change.
 
-=== Descriptive section titles
+=== Code in Section Titles
 
-  quote code with backslashes in section titles
+Quote code with backslashes in section titles
 
-=== Explicit section anchors
+=== Section Title Case
+
+Section titles should normally adhere to title case.
+
+[source,]
+----
+# bad
+=== Section title case
+
+# good
+=== Section Title Case
+----
+
+=== Explicit Section Anchors
 
     good for renaming
     primary/secondary
 
-=== One sentence per line [[ventilated-prose]] [[one-sentence-per-line]]
+=== One Sentence per Line [[ventilated-prose]] [[one-sentence-per-line]]
 
 https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-line
     less churn
     three examples
 
-=== Quote code in section titles
+=== Quote Code in Section Titles
 
 [source,]
 ----
@@ -103,26 +188,49 @@ https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-li
 === No `and` or `or` [[no-and-or-or]]
 ----
 
-==== Except when it's unnecessary
+==== Except when it's Unnecessary
 
 [source,]
 ----
-=== Set vs array
-
+# ok'ish
 === `Set` vs `Array`
+
+# good
+=== Set vs Array
 ----
 
 == Misc
 
-=== Provide editor configuration file
+=== Commnunity
+
+Make it clear that the guide is a community effort, and everyone is welcome to contribute and discuss.
+
+=== Evolution
+
+Mention that the guide is not set in stone, and is a living document.
+
+=== Static Analysis Tool References
+
+Provide a reference to corresponding `rubocop-hq/*` RuboCop extension, if it exists.
+
+=== Tell How to Contribute
+
+=== Advertize
+
+Ask to spread the word about the guide.
+A community-driven style guide is of little use to a community that doesn't know about its existence.
+
+=== Add a License
+
+=== Provide Editor Configuration File
 
   include .gitattributes file with no-trailing whitespace, no-something
 
-=== Ignore produced export
+=== Ignore Produced Export
 
 include .gitignore
 
-=== How to Contribute?
+== How to Contribute?
 
 It's easy, just follow the contribution guidelines below:
 
