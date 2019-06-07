@@ -12,7 +12,7 @@ endif::[]
 This Meta style guide outlines the recommended practices for style guide contributors.
 When we say "style", we mean "consistency".
 
-== Content
+== Content [[content]]
 
 ____
 Content is King
@@ -39,7 +39,7 @@ This Ruby style guide contains best practices for programming Ruby.
 This Ruby style guide recommends best practices so that real-world Ruby programmers can write code that can be maintained by other real-world Ruby programmers.
 ....
 
-=== Essentials
+=== Essentials [[essentials]]
 
 Leave out obvious, rarely used, and arguable guidelines.
 
@@ -51,25 +51,25 @@ Do not keep newlines in the beginning of the file.
 End each file with a single newline.
 ....
 
-=== Descriptive Section Titles
+=== Descriptive Section Titles [[descriptive-section-titles]]
 
 Provide a descriptive and concise section title.
 Avoid long titles.
 
 ....
 # bad - hard to understand the point, too generic
-=== Section Titles
+=== Section Titles [[section-titles]]
 
 # bad - overly verbose
-=== Explanatory and Descriptive Section Titles
+=== Explanatory and Descriptive Section Titles [[explanatory-and-descriptive-section-titles]]
 
 # good
-=== Descriptive Section Titles
+=== Descriptive Section Titles [[descriptive-section-titles]]
 ....
 
-=== Meaningful Descriptions
+=== Meaningful Descriptions [[meaningful-descriptions]]
 
-Provide concise, but comprehensive description.
+Provide a concise, but comprehensive description.
 
 ....
 # bad - not enough context
@@ -86,12 +86,12 @@ Prefer modules to classes with only class methods.
 Classes should be used only when it makes sense to create instances out of them.
 ....
 
-=== Good, OK'ish and Bad Examples
+=== Good, OK'ish and Bad Examples [[good-ok-ish-and-bad-examples]]
 
 Provide good, and bad examples for the guideline.
 Give enough context, but keep to the point.
 
-==== Good Bad Examples
+==== Good Bad Examples [[good-bad-examples]]
 
 Don't make a bad example horrible.
 Let it adhere to the other guidelines to highlight how it breaks the guideline in question.
@@ -104,9 +104,9 @@ Let it adhere to the other guidelines to highlight how it breaks the guideline i
 ==== Section title case [[section-title-case]]
 ....
 
-==== Example Description
+==== Example Annotation [[example-annotation]]
 
-Provide example description if the example is not obvious.
+Provide example annotation if the example is not obvious.
 
 ....
 # bad - too verbose
@@ -119,7 +119,7 @@ Provide example description if the example is not obvious.
 ...
 ....
 
-=== Options
+=== Options [[options]]
 
 Provide options when there is more than one acceptable way.
 
@@ -139,16 +139,16 @@ When continuing a chained method invocation on another line keep the `.` on the 
 When continuing a chained method invocation on another line, include the `.` on the first line to indicate that the expression continues.
 ....
 
-=== Context
+=== Context [[context]]
 
 Provide necessary context, sources, links to discussions.
 
-=== Up to Date
+=== Up to Date [[up-to-date]]
 
 Keep the guide up to date.
 Do not keep obsolete guidelines just for historical reasons.
 
-=== Regarded Sources
+=== Regarded Sources [[regarded-sources]]
 
 Iconic books on the subject of the guide are the best source of guidelines.
 
@@ -156,7 +156,7 @@ Established practices is another.
 Consult popular source code of mature projects, e.g. https://github.com/jeromedalbert/real-world-ruby-apps/[Real World Ruby apps] and https://github.com/eliotsykes/real-world-rails/[Real World Rails apps].
 Make sure to use recent stable versions.
 
-=== External Content
+=== External Content [[external-content]]
 
 Do not rely on external content.
 Keep important information in the guide itself.
@@ -169,30 +169,36 @@ Refer to https://www.geocities.com/ironhorse/ruby-multi-line-chains.html[this bl
 Leading dot style may result in surprising behavior when the code is pasted in IRB.
 ....
 
-=== Keep it Tidy
+=== Keep it Tidy [[keep-it-tidy]]
 
 It's OK to have discussions in progress.
 However, if there's no consensus, and discussions lead nowhere, close the pull request/issue.
 Probably it's not something super important.
 It's unlikely that it will ever be handled.
 
-== Layout
+== Layout [[layout]]
 
 === Provide the Table of Contents [[provide-toc]]
+
+TODO
 
 === Group the Guidelines
 
 Group the guidelines into logically related sections.
 
-=== Order Guidelines by Importance
+=== Order by Importance [[order-by-importance]]
 
-=== Cooperation
+TODO
+
+=== Cooperation [[cooperation]]
 
 In doubt, consult and mimic the other guides.
 
-== Formatting and Wording
+== Formatting and Wording [[formatting-and-wording]]
 
-=== Use Proper Terms
+=== Use Proper Terms [user-proper-terms]]
+
+TODO: descr
 
 ....
 # bad
@@ -205,16 +211,14 @@ Guideline
 
 === Use Proper English
 
+TODO
+
 === Use Proper AsciiDoc
 
 Refer to the latest https://asciidoctor.org/docs/asciidoc-recommended-practices[AsciiDoc recommended practices].
 Check HTML and PDF export output before accepting a change.
 
-=== Code in Section Titles
-
-Quote code with backslashes in section titles
-
-=== Section Title Case
+=== Section Title Case [[section-title-case]]
 
 Section titles should normally adhere to title case.
 
@@ -231,16 +235,24 @@ Section titles should normally adhere to title case.
 
 === Explicit Section Anchors
 
+TODO
+
     good for renaming
     primary/secondary
 
+Except for the sections that are very unlikely to change their title, e.g. License.
+
 === One Sentence per Line [[ventilated-prose]] [[one-sentence-per-line]]
+
+TODO
 
 https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-line
     less churn
     three examples
 
-=== Quote Code in Section Titles
+=== Code in Section Titles [[code-in-section-titles]]
+
+TODO: descr
 
 ....
 # bad
@@ -251,6 +263,8 @@ https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-li
 ....
 
 ==== Except when it's Unnecessary
+
+TODO: descr
 
 ....
 # ok'ish
@@ -274,34 +288,61 @@ It's "typographically" incorrect.
 
 == Misc
 
-=== Commnunity
+=== Community [[community]]
 
 Make it clear that the guide is a community effort, and everyone is welcome to contribute and discuss.
 
-=== Evolution
+=== Evolution [[evolution]]
 
 Mention that the guide is not set in stone, and is a living document.
 
-=== Static Analysis Tool References
+=== Tool References [[tools-references]]
 
-Provide a reference to corresponding `rubocop-hq/*` RuboCop extension, if it exists.
+Provide a reference to corresponding static analysis tool if it exists.
 
-=== Tell How to Contribute
+....
+# good
+https://github.com/rubocop-hq/rubocop[RuboCop], a static code analyzer (linter) and formatter, has a https://github.com/rubocop-hq/rubocop-rails[`rubocop-rails`] extension, based on this style guide.
+....
 
-=== Advertise
+=== Tell How to Contribute [[tell-how-to-contribute]]
+
+TODO
+
+=== Spread the Word [[spread-the-word]]
 
 Ask to spread the word about the guide.
 A community-driven style guide is of little use to a community that doesn't know about its existence.
 
 === Add a License
 
+Add a section mentioning the license.
+
+....
+# good
+== License
+image:https://i.creativecommons.org/l/by/3.0/88x31.png[Creative Commons License]
+This work is licensed under a http://creativecommons.org/licenses/by/3.0/deed.en_US[Creative Commons Attribution 3.0 Unported License]
+....
+
 === Provide Editor Configuration File
 
-  include .gitattributes file with no-trailing whitespace, no-something
+Include a `.gitattributes` file for automatic guide source normalization rules.
+
+....
+# good - .gitattributes
+*.adoc whitespace=trailing-space,tab-in-indent
+....
 
 === Ignore Produced Export
 
-include .gitignore
+Include a `.gitignore` file that ignores files produced by export.
+
+....
+# good - .gitignore
+README.html
+README.pdf
+....
 
 == How to Contribute?
 
