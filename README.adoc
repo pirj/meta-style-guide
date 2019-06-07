@@ -14,7 +14,6 @@ When we say "style", we mean "consistency".
 
 == Content
 
-[quote]
 ____
 Content is King
 
@@ -23,7 +22,6 @@ ____
 
 === Start with Why [[start-with-why]]
 
-[quote]
 ____
 People don't buy what you do,
 they buy why you do it.
@@ -33,58 +31,84 @@ ____
 
 Start with an explanation why the guide is important.
 
-[source,]
-----
+....
 # bad
 This Ruby style guide contains best practices for programming Ruby.
 
 # good
 This Ruby style guide recommends best practices so that real-world Ruby programmers can write code that can be maintained by other real-world Ruby programmers.
-----
+....
 
 === Essentials
 
-Leave out obvious, rarely used, and arguable recommendations.
+Leave out obvious, rarely used, and arguable guidelines.
 
-[source,]
-----
+....
 # bad
 Do not keep newlines in the beginning of the file.
 
 # good
 End each file with a single newline.
-----
+....
 
 === Descriptive Section Titles
 
+Provide a descriptive and concise section title.
+Avoid long titles.
+
+....
+# bad - hard to understand the point, too generic
+=== Section Titles
+
+# bad - overly verbose
+=== Explanatory and Descriptive Section Titles
+
+# good
+=== Descriptive Section Titles
+....
+
 === Meaningful Descriptions
 
-Provide concise, but comprehensive descriptions.
+Provide concise, but comprehensive description.
 
-[source,]
-----
+....
 # bad - not enough context
 Prefer modules to classes with only class methods.
 
 # bad - excessively verbose
 Prefer modules to classes with only class methods.
-Classes are intended to be instantiated and inherited from. A
+Classes are intended to be instantiated and inherited from.
 A service class is usually a functional unit that has an entry point, and the implementation is not important for consumers.
 Dealing with the redundant necessity to instantiate a service class adds boilerplate to consumer code.
 
 # good
 Prefer modules to classes with only class methods.
 Classes should be used only when it makes sense to create instances out of them.
-----
+....
 
-=== Good, Ok'ish and Bad Examples
+=== Good, OK'ish and Bad Examples
+
+Provide good, and bad examples for the guideline.
+Give enough context, but keep to the point.
+
+==== Good Bad Examples
+
+Don't make a bad example horrible.
+Let it adhere to the other guidelines to highlight how it breaks the guideline in question.
+
+....
+# bad bad - bad by all means
+==== Secktion taitl case
+
+# good bad - just bad from title case standpoint
+==== Section title case [[section-title-case]]
+....
 
 ==== Example Description
 
 Provide example description if the example is not obvious.
 
-[source,]
-----
+....
 # bad - too verbose
 ...
 
@@ -93,11 +117,27 @@ Provide example description if the example is not obvious.
 
 # good - enough context to understand the implications
 ...
-----
+....
 
 === Options
 
 Provide options when there is more than one acceptable way.
+
+....
+# good
+=== Consistent Multi-line Chains [[consistent-multi-line-chains]]
+
+Adopt a consistent multi-line method chaining style.
+There are two popular styles in the Ruby community, both of which are considered good - leading `.`  and trailing `.`.
+
+==== Leading `.` [[leading-dot-in-multi-line-chains]]
+
+When continuing a chained method invocation on another line keep the `.` on the second line.
+
+==== Trailing `.` [[trailing-dot-in-multi-line-chains]]
+
+When continuing a chained method invocation on another line, include the `.` on the first line to indicate that the expression continues.
+....
 
 === Context
 
@@ -121,10 +161,20 @@ Make sure to use recent stable versions.
 Do not rely on external content.
 Keep important information in the guide itself.
 
+....
+# bad
+Refer to https://www.geocities.com/ironhorse/ruby-multi-line-chains.html[this blog post] for more information.
+
+# good
+Leading dot style may result in surprising behavior when the code is pasted in IRB.
+....
+
 === Keep it Tidy
 
-It's ok to have discussions in progress.
+It's OK to have discussions in progress.
 However, if there's no consensus, and discussions lead nowhere, close the pull request/issue.
+Probably it's not something super important.
+It's unlikely that it will ever be handled.
 
 == Layout
 
@@ -136,15 +186,26 @@ Group the guidelines into logically related sections.
 
 === Order Guidelines by Importance
 
-=== Brothership
+=== Cooperation
 
 In doubt, consult and mimic the other guides.
 
-== Formatting
+== Formatting and Wording
 
-=== Use proper English
+=== Use Proper Terms
 
-=== Use proper AsciiDoc
+....
+# bad
+Recommendation
+
+
+# good
+Guideline
+....
+
+=== Use Proper English
+
+=== Use Proper AsciiDoc
 
 Refer to the latest https://asciidoctor.org/docs/asciidoc-recommended-practices[AsciiDoc recommended practices].
 Check HTML and PDF export output before accepting a change.
@@ -157,14 +218,16 @@ Quote code with backslashes in section titles
 
 Section titles should normally adhere to title case.
 
-[source,]
-----
-# bad
-=== Section title case
+....
+# bad - not all nouns, pronouns, verbs, adjectives, adverbs are capitalized
+=== Provide the table of contents [[provide-toc]]
+
+# bad - conjunctions, articles, and prepositions are capitalized
+=== Provide The Table If Contents [[provide-toc]]
 
 # good
-=== Section Title Case
-----
+=== Provide the Table of Contents [[provide-toc]]
+....
 
 === Explicit Section Anchors
 
@@ -179,25 +242,35 @@ https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-li
 
 === Quote Code in Section Titles
 
-[source,]
-----
+....
 # bad
 === No and or or [[no-and-or-or]]
 
 # good
 === No `and` or `or` [[no-and-or-or]]
-----
+....
 
 ==== Except when it's Unnecessary
 
-[source,]
-----
+....
 # ok'ish
 === `Set` vs `Array`
 
 # good
 === Set vs Array
-----
+....
+
+=== Use ASCII [[use-ascii]]
+
+Stick to ASCII character set unless absolutely necessary.
+
+....
+# bad
+It’s “typographically” correct.
+
+# good
+It's "typographically" incorrect.
+....
 
 == Misc
 
@@ -215,7 +288,7 @@ Provide a reference to corresponding `rubocop-hq/*` RuboCop extension, if it exi
 
 === Tell How to Contribute
 
-=== Advertize
+=== Advertise
 
 Ask to spread the word about the guide.
 A community-driven style guide is of little use to a community that doesn't know about its existence.
