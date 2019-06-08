@@ -91,13 +91,25 @@ Prefer modules to classes with only class methods.
 Classes should be used only when it makes sense to create instances out of them.
 ....
 
-[#good-ok-ish-and-bad-examples]
+[#good-okish-and-bad-examples]
 === Good, OK'ish and Bad Examples
 
-Provide good, and bad examples for the guideline.
+Provide good and bad examples for the guideline.
 Give enough context, but keep to the point.
 
-TODO: ok'ish
+Feel free to add tolerable examples.
+
+....
+# bad
+class FooError < StandardError
+end
+
+# ok'ish
+class FooError < StandardError; end
+
+# good
+FooError = Class.new(StandardError)
+....
 
 [#good-bad-examples]
 ==== Good Bad Examples
@@ -107,11 +119,11 @@ Let it adhere to the other guidelines to highlight how it breaks the guideline i
 
 ....
 # bad bad - bad by all means
-==== Secktion taitl case
+%w$%d %d$ % \
+  [20,10]
 
-# good bad - just bad from title case standpoint
-[#section-title-case]
-==== Section title case
+# good bad - just bad from current guideline standpoint
+'%d %d' % [20, 10]
 ....
 
 [#example-annotation]
@@ -198,20 +210,28 @@ It's unlikely that it will ever be handled.
 
 == Layout
 
-[#provide-toc]
-=== Provide the Table of Contents
-
-TODO
-
 [#group-the-guidelines]
 === Group the Guidelines
 
-Group the guidelines into logically related sections.
+Group the guidelines into logically related sections by defining group sections using level 1 section titles.
 
 [#order-by-importance]
 === Order by Importance
 
-TODO
+Put the most important guidelines on the top of the groups.
+
+[#provide-toc]
+=== Provide the Table of Contents
+
+Make sure the table of contents provides links to guideline groups, and important topics by defining them level 1 section titles.
+
+....
+# good - "Syntax" is available in the table of contents
+== Syntax
+
+[#double-colons]
+=== Double colons
+....
 
 [#cooperation]
 === Cooperation
@@ -221,23 +241,23 @@ In doubt, consult and mimic the other guides.
 [#formatting-and-wording]
 == Formatting and Wording
 
-=== Use Proper Terms [user-proper-terms]]
+[#user-proper-terms]
+=== Use Proper Terms
 
-TODO: descr
+Avoid uncommon slang, call things what they are, and what community calls them.
 
 ....
 # bad
-Recommendation
-
+Do not use nested method definitions, use a closure instead.
 
 # good
-Guideline
+Do not use nested method definitions, use lambda instead.
 ....
 
 [#use-proper-english]
 === Use Proper English
 
-TODO
+Avoid grammar, punctuation, and spelling errors.
 
 [#use-proper-asciidoc]
 === Use Proper AsciiDoc
@@ -293,16 +313,29 @@ Feel free to abbreviate section anchors.
 [#one-sentence-per-line]
 === One Sentence per Line [[ventilated-prose]]
 
-TODO
+Don’t wrap text at a fixed column width.
+Instead, put each sentence on its own line, a technique called sentence per line.
 
-https://asciidoctor.org/docs/asciidoc-recommended-practices/#one-sentence-per-line
-    less churn
-    three examples
+....
+# bad - the whole paragraph needs to be reformatted on edit
+Prefix with `_` unused block parameters and local variables. It's also
+acceptable to use just `_` (although it's a bit less descriptive). This
+convention is recognized by the Ruby interpreter and tools like RuboCop and will
+suppress their unused variable warnings.
+
+# bad - line is too long
+Prefix with `_` unused block parameters and local variables. It's also acceptable to use just `_` (although it's a bit less descriptive). This convention is recognized by the Ruby interpreter and tools like RuboCop and will suppress their unused variable warnings.
+
+# good - none of the above
+Prefix with `_` unused block parameters and local variables.
+It's also acceptable to use just `_` (although it's a bit less descriptive).
+This convention is recognized by the Ruby interpreter and tools like RuboCop and will suppress their unused variable warnings.
+....
 
 [#code-in-section-titles]
 === Code in Section Titles
 
-TODO: descr
+Quote code in section titles with backticks.
 
 ....
 # bad
@@ -314,9 +347,10 @@ TODO: descr
 === No `and` or `or`
 ....
 
+[#unnecessary-code-in-section-titles]
 ==== Except when it's Unnecessary
 
-TODO: descr
+Omit backticks when they don't add semantic clarity.
 
 ....
 # ok'ish
@@ -333,10 +367,10 @@ Stick to ASCII character set unless absolutely necessary.
 
 ....
 # bad
-It’s “typographically” correct.
+It’s “typographically” correct — but bad.
 
 # good
-It's "typographically" incorrect.
+It's "typographically" incorrect - but good.
 ....
 
 == Misc
@@ -364,7 +398,7 @@ https://github.com/rubocop-hq/rubocop[RuboCop], a static code analyzer (linter) 
 [#tell-how-to-contribute]
 === Tell How to Contribute
 
-TODO
+Provide a clear way how to contribute to the guide.
 
 [#spread-the-word]
 === Spread the Word
@@ -372,6 +406,7 @@ TODO
 Ask to spread the word about the guide.
 A community-driven style guide is of little use to a community that doesn't know about its existence.
 
+[#add-a-license]
 === Add a License
 
 Add a section mentioning the license.
@@ -383,6 +418,7 @@ image:https://i.creativecommons.org/l/by/3.0/88x31.png[Creative Commons License]
 This work is licensed under a http://creativecommons.org/licenses/by/3.0/deed.en_US[Creative Commons Attribution 3.0 Unported License]
 ....
 
+[#provide-editor-config]
 === Provide Editor Configuration File
 
 Include a `.gitattributes` file for automatic guide source normalization rules.
@@ -392,6 +428,7 @@ Include a `.gitattributes` file for automatic guide source normalization rules.
 *.adoc whitespace=trailing-space,tab-in-indent
 ....
 
+[#ignore-export]
 === Ignore Produced Export
 
 Include a `.gitignore` file that ignores files produced by export.
