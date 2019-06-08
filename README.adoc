@@ -308,7 +308,7 @@ Feel free to abbreviate section anchors.
 # good
 [#provide-toc]
 === Provide the Table of Contents
-...
+....
 
 [#one-sentence-per-line]
 === One Sentence per Line [[ventilated-prose]]
