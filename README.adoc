@@ -275,7 +275,7 @@ Section titles should normally adhere to title case.
 === Provide the table of contents
 
 # bad - conjunctions, articles, and prepositions are capitalized
-=== Provide The Table If Contents
+=== Provide The Table Of Contents
 
 # good
 === Provide the Table of Contents
