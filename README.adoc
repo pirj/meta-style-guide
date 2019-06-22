@@ -54,6 +54,24 @@ Do not keep newlines in the beginning of the file.
 End each file with a single newline.
 ....
 
+[#evolution]
+=== Evolution
+
+Mention that the guide is not set in stone, and is a living document.
+
+[#community]
+=== Community
+
+Make it clear that the guide is a community effort, and everyone is welcome to contribute and discuss.
+
+[#keep-it-tidy]
+=== Keep it Tidy
+
+It's OK to have discussions in progress.
+However, if there's no consensus, and discussions lead nowhere, close the pull request/issue.
+Probably it's not something super important.
+It's unlikely that it will ever be handled.
+
 [#descriptive-section-titles]
 === Descriptive Section Titles
 
@@ -199,14 +217,6 @@ Refer to https://www.geocities.com/ironhorse/ruby-multi-line-chains.html[this bl
 # good
 Leading dot style may result in surprising behavior when the code is pasted in IRB.
 ....
-
-[#keep-it-tidy]
-=== Keep it Tidy
-
-It's OK to have discussions in progress.
-However, if there's no consensus, and discussions lead nowhere, close the pull request/issue.
-Probably it's not something super important.
-It's unlikely that it will ever be handled.
 
 == Layout
 
@@ -374,16 +384,6 @@ It's "typographically" incorrect - but good.
 ....
 
 == Misc
-
-[#community]
-=== Community
-
-Make it clear that the guide is a community effort, and everyone is welcome to contribute and discuss.
-
-[#evolution]
-=== Evolution
-
-Mention that the guide is not set in stone, and is a living document.
 
 [#tools-references]
 === Tool References
