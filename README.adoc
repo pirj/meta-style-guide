@@ -64,6 +64,13 @@ Mention that the guide is not set in stone, and is a living document.
 
 Make it clear that the guide is a community effort, and everyone is welcome to contribute and discuss.
 
+[#community-driven]
+=== Community-driven
+
+Make sure that any change getting its way to the guide is community-driven.
+Use https://github.com/rubocop-hq/blog.rubystyle.guide/[the blog] to announce proposed changes.
+Lead the discussion on GitHub.
+
 [#keep-it-tidy]
 === Keep it Tidy
 
