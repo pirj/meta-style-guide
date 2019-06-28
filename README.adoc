@@ -99,6 +99,12 @@ Avoid long titles.
 [#meaningful-descriptions]
 === Meaningful Descriptions
 
+____
+A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.
+
+--  Antoine de Saint-Exupery
+____
+
 Provide a concise, but comprehensive description.
 
 ....
