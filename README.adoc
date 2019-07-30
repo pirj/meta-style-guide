@@ -122,8 +122,8 @@ Prefer modules to classes with only class methods.
 Classes should be used only when it makes sense to create instances out of them.
 ....
 
-[#good-okish-and-bad-examples]
-=== Good, OK'ish and Bad Examples
+[#good-acceptable-and-bad-examples]
+=== Good, Acceptable and Bad Examples
 
 Provide good and bad examples for the guideline.
 Give enough context, but keep to the point.
@@ -135,7 +135,7 @@ Feel free to add tolerable examples.
 class FooError < StandardError
 end
 
-# ok'ish
+# acceptable
 class FooError < StandardError; end
 
 # good
@@ -166,7 +166,7 @@ Provide example annotation if the example is not obvious.
 # bad - too verbose
 ...
 
-# ok'ish - short, but comprehensive
+# acceptable - short, but comprehensive
 ...
 
 # good - enough context to understand the implications
@@ -376,7 +376,7 @@ Quote code in section titles with backticks.
 Omit backticks when they don't add semantic clarity.
 
 ....
-# ok'ish
+# acceptable
 === `Set` vs `Array`
 
 # good
